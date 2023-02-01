@@ -1,3 +1,9 @@
+==> Cara ganti kernel manual tanpa amlogic service
+    https://www.facebook.com/sibondt/videos/1321155112043335/?idorvanity=421688359852864&mibextid=Nif5oz
+
+==> Link Kernel
+    https://github.com/ophub/kernel/tree/main/
+
 ==> Cara setting TTL Di Firewall4 Nftable OpenWrt 21
 #share_iwrt #ttl #fixttl #ttlfix #bypassttl #ttlbypass
 Fix TTL OpenWRT
