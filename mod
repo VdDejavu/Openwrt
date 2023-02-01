@@ -22,3 +22,7 @@ iptables -t mangle -I POSTROUTING -o $USB0 -j TTL --ttl-set 58
 
 ==> Cara setting TTL Di Firewall4 Nftable OpenWrt 22.03.3
     https://youtu.be/UdZEn3ELzSc
+    
+https://www.ventoy.net/en/doc_openwrt.html
+https://github.com/ventoy/OpenWrtPlugin
+https://www.helmiau.com/blog/ganti-kernel-s9xxx
