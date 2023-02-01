@@ -1,6 +1,6 @@
 ==> Cara ganti kernel manual tanpa amlogic service
     https://www.facebook.com/sibondt/videos/1321155112043335/?idorvanity=421688359852864&mibextid=Nif5oz
-
+    https://www.helmiau.com/blog/ganti-kernel-s9xxx
 ==> Link Kernel
     https://github.com/ophub/kernel/tree/main/
 
@@ -31,4 +31,4 @@ iptables -t mangle -I POSTROUTING -o $USB0 -j TTL --ttl-set 58
     
 https://www.ventoy.net/en/doc_openwrt.html
 https://github.com/ventoy/OpenWrtPlugin
-https://www.helmiau.com/blog/ganti-kernel-s9xxx
+
