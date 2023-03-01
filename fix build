@@ -1,0 +1,34 @@
+3ginfo-qmisignal 3ginfo-text adb atinout bandwidthd base-files bash blkid block-mount btrfs-progs \
+busybox bzip2 ca-bundle ca-certificates cgi-io chat comgt comgt-ncm coreutils coreutils-nohup \
+coreutils-timeout curl dbus dnsmasq dnsmasq-full dosfstools dropbear e2fsprogs ethtool fdisk \
+firewall4 fstools fwtool getrandom glib2 gzip htop httping hub-ctrl internet-detector iperf3 \
+ip-full ipset jansson4 jq jshn jsonfilter kernel kmod-atm kmod-crypto-acompress kmod-crypto-crc32c \
+kmod-crypto-hash kmod-crypto-sha256 kmod-fs-btrfs kmod-fuse kmod-inet-diag kmod-ipt-core kmod-ipt-ipset \
+kmod-lib-crc32c kmod-lib-crc-ccitt kmod-lib-lzo kmod-libphy kmod-lib-raid6 kmod-lib-xor \
+kmod-lib-zlib-deflate kmod-lib-zlib-inflate kmod-lib-zstd kmod-loop kmod-mii kmod-nf-conntrack \
+kmod-nf-conntrack6 kmod-nf-conntrack-netlink kmod-nf-flow kmod-nf-ipt kmod-nf-log kmod-nf-log6 \
+kmod-nf-nat kmod-nfnetlink kmod-nf-reject kmod-nf-reject6 kmod-nft-core kmod-nft-fib kmod-nft-nat \
+kmod-nft-offload kmod-nf-tproxy kmod-nft-tproxy kmod-nls-base kmod-phy-ax88796b kmod-ppp kmod-pppoe \
+kmod-pppox kmod-scsi-core kmod-slhc kmod-tun kmod-usb2 kmod-usb2-pci kmod-usb3 kmod-usb-acm kmod-usb-atm \
+kmod-usb-core kmod-usb-dwc3 kmod-usb-ehci kmod-usb-net kmod-usb-net-asix kmod-usb-net-asix-ax88179 \
+kmod-usb-net-cdc-ether kmod-usb-net-cdc-mbim kmod-usb-net-cdc-ncm kmod-usb-net-cdc-subset \
+kmod-usb-net-dm9601-ether kmod-usb-net-huawei-cdc-ncm kmod-usb-net-qmi-wwan kmod-usb-net-rndis \
+kmod-usb-net-rtl8150 kmod-usb-net-rtl8152 kmod-usb-net-sierrawireless kmod-usb-roles kmod-usb-serial \
+kmod-usb-serial-option kmod-usb-serial-qualcomm kmod-usb-serial-sierrawireless kmod-usb-serial-wwan \
+kmod-usb-storage kmod-usb-storage-extras kmod-usb-storage-uas kmod-usb-wdm kmod-usb-xhci-hcd \
+libatomic1 libattr libblkid1 libblobmsg-json20220515 libbpf20220308 libbz2-1.0 libc libcap libcap-bin \
+libcomerr0 libcurl4 libdb47 libdbus libelf1 libevdev libexpat libext2fs2 libf2fs6 libfdisk1 libffi \
+libfreetype libgcc1 libgd libgmp10 libintl-full8 libipset13 libiwinfo20210430 libiwinfo-data \
+libiwinfo-lua libjpeg-turbo libjson-c5 libjson-script20220515 liblua5.1.5 liblucihttp0 liblucihttp-lua \
+liblzma liblzo2 libmbedtls12 libmbim libminiupnpc libmnl0 libmount1 libnatpmp1 libncurses6 \
+libnetfilter-conntrack3 libnettle8 libnfnetlink0 libnftnl11 libnghttp2-14 libnl-core200 libnl-genl200 \
+libnl-tiny1 libopenssl1.1 libopenssl-conf libparted libpcap1 libpci libpcre libpcre2 libpng libpthread \
+libqmi libqrtr-glib libreadline8 librt libruby3.0 libsmartcols1 libsqlite3-0 libss2 libstdcpp6 \
+libubox20220515 libubox20220927 libubus20220601 libubus-lua libuci20130104 libuci-lua libuclient20201210 \
+libucode20220812 libudev-zero libusb-1.0-0 libusb-compat4 libustream-wolfssl20201210 libuuid1 libuv1 \
+libwebp libwebsockets-full libwolfssl5.5.1.ee39414e libxml2 libyaml libzip-openssl logd losetup lsblk \
+lua luci luci-app-3ginfo-lite luci-app-argon-config luci-app-bandwidthd luci-app-diskman luci-app-firewall \
+luci-app-internet-detector luci-app-modemband luci-app-modeminfo luci-app-opkg luci-app-sms-tool \
+luci-app-ttyd luci-app-zerotier luci-base luci-compat luci-lib-base luci-lib-ip luci-lib-ipkg \
+luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-mod-network luci-mod-status luci-mod-system \
+luci-proto-3g luci-proto-ipv6 luci-proto-modemmanager luci-proto-ncm luci-proto-ppp luci-proto-qmi luci-ssl luci-theme-alpha-darkmode luci-theme-bootstrap luci-theme-material luci-theme-openwrt mbim-utils minicom mkf2fs modemband modeminfo modeminfo-serial-xmm modemmanager mtd nano netdata netifd nftables-json ntfs-3g odhcp6c odhcpd-ipv6only oniguruma5 openssh-client openssh-sftp-server openssl-util openwrt-keyring opkg parted pciids perl perlbase-autosplit perlbase-b perlbase-base perlbase-bytes perlbase-class perlbase-config perlbase-cpan perlbase-cwd perlbase-dirhandle perlbase-dynaloader perlbase-encode perlbase-errno perlbase-essential perlbase-extutils perlbase-fcntl perlbase-feature perlbase-file perlbase-filehandle perlbase-http-tiny perlbase-i18n perlbase-integer perlbase-io perlbase-ipc perlbase-list perlbase-locale perlbase-mime perlbase-net perlbase-opcode perlbase-ostype perlbase-params perlbase-posix perlbase-re perlbase-safe perlbase-scalar perlbase-selectsaver perlbase-selfloader perlbase-socket perlbase-symbol perlbase-sys perlbase-text perlbase-tie perlbase-time perlbase-unicore perlbase-utf8 perlbase-xsloader php8 php8-cgi php8-fpm php8-mod-ctype php8-mod-curl php8-mod-dom php8-mod-fileinfo php8-mod-filter php8-mod-gettext php8-mod-gmp php8-mod-iconv php8-mod-mbstring php8-mod-opcache php8-mod-pcntl php8-mod-pdo php8-mod-session php8-mod-zip picocom powertop ppp ppp-mod-pppoe procd procd-seccomp procd-ujail pv px5g-wolfssl qmi-utils r8152-firmware rpcd rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-luci rpcd-mod-rrdns ruby ruby-bigdecimal ruby-date ruby-dbm ruby-digest ruby-enc ruby-forwardable ruby-pstore ruby-psych ruby-stringio ruby-strscan ruby-yaml screen smartmontools sms-tool tar terminfo ttyd ubox ubus ubusd uci uclient-fetch ucode ucode-mod-fs ucode-mod-ubus ucode-mod-uci UDPspeeder uhttpd uhttpd-mod-ubus uhubctl umbim unzip uqmi urandom-seed urngd usbids usb-modeswitch usbutils usign uuidgen vnstat2 vnstati2 wget-ssl wwan xmm-modem xz xz-utils zerotier zlib zoneinfo-asia zoneinfo-core libiwinfo libiwinfo-data libiwinfo-lua liblua liblucihttp liblucihttp-lua libubus-lua lua luci luci-app-firewall luci-app-opkg luci-base luci-lib-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-mod-network luci-mod-status luci-mod-system luci-proto-ipv6 luci-proto-ppp luci-ssl luci-theme-bootstrap px5g-wolfssl rpcd rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-luci rpcd-mod-rrdns luci-compat ath9k-htc-firmware hostapd hostapd-utils kmod-ath kmod-ath9k kmod-ath9k-common kmod-ath9k-htc kmod-cfg80211 kmod-crypto-acompress kmod-crypto-crc32c kmod-crypto-hash kmod-fs-btrfs kmod-mac80211 wireless-tools wpa-cli wpa-supplicant libc php8 php8-cgi php8-mod-session php8-mod-ctype php8-mod-fileinfo php8-mod-zip php8-mod-iconv php8-mod-mbstring nano wget libmbedtls luci-app-mwan3 luci-theme-material git git-http jq openssh-client openssl-util https-dns-proxy luci-app-ttyd zram-swap netdata kmod-usb-net-rndis iperf3 kmod-usb-net-cdc-ether kmod-usb-net-asix kmod-usb-net-asix-ax88179 kmod-usb-net-dm9601-ether kmod-usb-net-rtl8152
