@@ -1,22 +1,22 @@
-3ginfo-qmisignal - 20190418
-3ginfo-text - 20190418
-UDPspeeder - 20210116.0-3
-adb - android.5.0.2_r1-3
-atinout - 0.9.1
-bandwidthd - 2.0.1-35-7
-base-files - 1492-r19777-2853b6d652
-bash - 5.2.15-1
-blkid - 2.37.4-1
-block-mount - 2022-06-02-93369be0-2
-btrfs-progs - 6.0.1-1
-busybox - 1.35.0-5
-bzip2 - 1.0.8-1
-ca-bundle - 20211016-1
-ca-certificates - 20211016-1
-cgi-io - 2022-08-10-901b0f04-21
-chat - 2.4.9.git-2021-01-04-3
-comgt - 0.32-34
-comgt-ncm - 0.32-34
+3ginfo-qmisignal
+3ginfo-text
+UDPspeeder
+adb
+atinout
+bandwidthd
+base-files
+bash
+blkid
+block-mount
+btrfs-progs
+busybox
+bzip2
+ca-bundle
+ca-certificates
+cgi-io
+chat
+comgt
+comgt-ncm
 coreutils - 9.0-2
 coreutils-nohup - 9.0-2
 coreutils-timeout - 9.0-2
