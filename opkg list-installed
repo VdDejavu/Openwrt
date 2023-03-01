@@ -17,27 +17,27 @@ cgi-io
 chat
 comgt
 comgt-ncm
-coreutils - 9.0-2
-coreutils-nohup - 9.0-2
-coreutils-timeout - 9.0-2
-curl - 7.86.0-2
-dbus - 1.13.18-12
-dnsmasq - 2.86-15
-dnsmasq-full - 2.88-1
-dosfstools - 4.2-2
-dropbear - 2022.82-2
-e2fsprogs - 1.46.5-2
-ethtool - 5.16-1
-fdisk - 2.37.4-1
-firewall4 - 2022-10-18-7ae5e14b-1
-fstools - 2022-06-02-93369be0-2
-fwtool - 2019-11-12-8f7fe925-1
-getrandom - 2021-08-03-205defb5-2
-glib2 - 2.70.5-4
-gzip - 1.11-1
-htop - 3.2.1-1
-httping - 2.5-1
-hub-ctrl - 1.0-2
+coreutils
+coreutils-nohup
+coreutils-timeout
+curl
+dbus
+dnsmasq
+dnsmasq-full
+dosfstools
+dropbear
+e2fsprogs
+ethtool
+fdisk
+firewall4
+fstools
+fwtool
+getrandom
+glib2
+gzip
+htop
+httping
+hub-ctrl
 internet-detector - 0.6-0
 ip-full - 5.15.0-3
 iperf3 - 3.11-1
@@ -222,7 +222,6 @@ lsblk - 2.37.3-3
 lua - 5.1.5-10
 luci - git-20.074.84698-ead5e81
 luci-app-3ginfo-lite - 1.0.18-20220707
-luci-app-amlogic - 3.1.155-1
 luci-app-argon-config - 0.8-beta
 luci-app-bandwidthd - 1-1
 luci-app-diskman - git-23.260.37888-e2c1089
@@ -237,7 +236,6 @@ luci-app-ttyd - git-21.281.64389-70f3ae5
 luci-app-zerotier - 1.0
 luci-base - git-22.297.57821-bb33797
 luci-compat - git-22.069.45071-03bb0e2
-luci-i18n-amlogic-zh-cn - 3.1.155-1
 luci-lib-base - git-20.232.39649-1f6dc29
 luci-lib-ip - git-20.250.76529-62505bd
 luci-lib-ipkg - git-18.318.71164-4bbe325
