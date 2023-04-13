@@ -1,0 +1,39 @@
+Untuk mengubah mode perangkat USB pada modem Fibocom L860 ke mode NCM (Network Control Model), Anda dapat menggunakan paket usb-modeswitch pada router OpenWrt.
+Berikut adalah langkah-langkah untuk mengganti mode perangkat USB pada modem Fibocom L860 ke mode NCM:
+
+    Pastikan bahwa paket usb-modeswitch sudah terinstal pada router OpenWrt dengan menggunakan perintah:
+
+
+opkg update
+opkg install usb-modeswitch
+
+    Hubungkan modem Fibocom L860 ke port USB pada router OpenWrt.
+
+    Gunakan perintah "dmesg" untuk memeriksa apakah modem Fibocom L860 sudah terdeteksi oleh sistem dan terbaca sebagai perangkat USB storage.
+
+    Ketikkan perintah berikut pada terminal OpenWrt untuk mengubah mode perangkat USB pada modem Fibocom L860 ke mode NCM:
+
+
+usbmode -v 0x8087 -p 0x0a9b -M "55534243123456780000000000000011062000000101000100000000000000"
+
+Perintah di atas akan mengirimkan perintah USB vendor spesifik untuk mengubah mode perangkat USB pada modem Fibocom L860 ke mode NCM.
+
+    Gunakan perintah "dmesg" lagi untuk memeriksa apakah modem Fibocom L860 sudah terdeteksi oleh sistem dan terbaca sebagai perangkat USB modem.
+
+    Konfigurasi interface jaringan pada router OpenWrt untuk menggunakan perangkat /dev/cdc-wdm0 sebagai modem. Anda dapat menggunakan 
+    perintah "uci set network.<interface>.device='/dev/cdc-wdm0'" untuk mengatur perangkat modem Fibocom L860 sebagai perangkat utama.
+
+    Restart router OpenWrt dan periksa apakah modem Fibocom L860 sudah terdeteksi dan terkoneksi dengan benar sebagai perangkat modem NCM.
+    
+Perintah usbmode -v 0x8087 -p 0x0a9b -M "55534243123456780000000000000011062000000101000100000000000000" adalah perintah untuk mengubah 
+mode perangkat USB pada modem Fibocom L860 ke mode NCM (Network Control Model).
+
+Penjelasan perintah di atas:
+
+    -v 0x8087: mengacu pada ID vendor untuk perangkat USB yang akan diubah mode-nya. ID vendor 0x8087 adalah ID vendor untuk Intel Corporation.
+    -p 0x0a9b: mengacu pada ID produk untuk perangkat USB yang akan diubah mode-nya. ID produk 0x0a9b adalah ID produk untuk modem Fibocom L860.
+    -M "55534243123456780000000000000011062000000101000100000000000000": mengirimkan pesan USB vendor spesifik ke perangkat USB agar perangkat
+    tersebut beralih ke mode NCM.
+
+Dengan menjalankan perintah di atas, perangkat USB pada modem Fibocom L860 akan beralih dari mode USB storage menjadi mode NCM, 
+sehingga dapat digunakan sebagai modem pada router OpenWrt.
