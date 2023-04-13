@@ -2,7 +2,8 @@ Jika perangkat "/dev/cdc-wdm0" tidak terdeteksi pada router OpenWrt Anda, Anda p
 
 Berikut adalah beberapa langkah yang dapat Anda coba:
 
-    Pastikan bahwa perangkat modem Fibocom L860 sudah terhubung ke router OpenWrt melalui port USB yang tersedia. Anda dapat menggunakan perintah "lsusb" untuk memeriksa apakah perangkat modem Fibocom L860 sudah terdeteksi oleh sistem.
+    Pastikan bahwa perangkat modem Fibocom L860 sudah terhubung ke router OpenWrt melalui port USB yang tersedia. Anda dapat menggunakan perintah "lsusb" 
+    untuk memeriksa apakah perangkat modem Fibocom L860 sudah terdeteksi oleh sistem.
 
     Instal paket usb-modeswitch dan usb-modeswitch-data dengan perintah:
 
@@ -26,8 +27,10 @@ perl
 
 lsmod | grep usb
 
-    Pastikan bahwa perangkat "/dev/ttyUSB0" atau "/dev/ttyUSB1" sudah terdeteksi oleh sistem. Anda dapat menggunakan perintah "dmesg" untuk memeriksa apakah perangkat modem Fibocom L860 sudah terdeteksi oleh sistem dan terbaca sebagai "/dev/ttyUSB0" atau "/dev/ttyUSB1". Jika tidak terbaca, cobalah untuk mencoba mencabut dan memasang kembali perangkat modem Fibocom L860 ke port USB.
+    Pastikan bahwa perangkat "/dev/ttyUSB0" atau "/dev/ttyUSB1" sudah terdeteksi oleh sistem. Anda dapat menggunakan perintah "dmesg" untuk memeriksa 
+    apakah perangkat modem Fibocom L860 sudah terdeteksi oleh sistem dan terbaca sebagai "/dev/ttyUSB0" atau "/dev/ttyUSB1". Jika tidak terbaca, cobalah untuk mencoba mencabut dan memasang kembali perangkat modem Fibocom L860 ke port USB.
 
-    Jika perangkat "/dev/ttyUSB0" atau "/dev/ttyUSB1" sudah terdeteksi, coba ganti perangkat "/dev/cdc-wdm0" dengan "/dev/ttyUSB2" atau "/dev/ttyUSB3" pada konfigurasi jaringan Anda.
+    Jika perangkat "/dev/ttyUSB0" atau "/dev/ttyUSB1" sudah terdeteksi, coba ganti perangkat "/dev/cdc-wdm0" dengan "/dev/ttyUSB2" atau "/dev/ttyUSB3" 
+    pada konfigurasi jaringan Anda.
 
     Restart router OpenWrt Anda dan periksa apakah perangkat modem Fibocom L860 sudah terdeteksi dan terkoneksi dengan benar.
