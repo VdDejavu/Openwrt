@@ -38,6 +38,49 @@ Penjelasan perintah di atas:
 Dengan menjalankan perintah di atas, perangkat USB pada modem Fibocom L860 akan beralih dari mode USB storage menjadi mode NCM, 
 sehingga dapat digunakan sebagai modem pada router OpenWrt.
 
+Berikut ini adalah script untuk mengganti mode modem Fibocom L860 menjadi mode NCM di router OpenWrt:
+
+bash
+
+#!/bin/sh
+# Ganti mode modem Fibocom L860 menjadi NCM
+
+# Hentikan koneksi internet
+/etc/init.d/network stop
+
+# Matikan modem
+echo '1-1' > /sys/bus/usb/drivers/usb/unbind
+
+# Ganti mode menjadi NCM
+usbmode -v 0x8087 -p 0x0a9b -M "55534243123456780000000000000011062000000101000100000000000000"
+
+# Hidupkan modem
+echo '1-1' > /sys/bus/usb/drivers/usb/bind
+
+# Tunggu modem terdeteksi
+sleep 10
+
+# Konfigurasi koneksi internet dengan mode NCM
+uci set network.wan.proto=ncm
+uci set network.wan.device=/dev/cdc-wdm0
+uci set network.wan.apn=nama_apn
+uci set network.wan.pincode=kode_pin
+uci set network.wan.auth=none
+uci set network.wan.ipv6=auto
+uci set network.wan.auto=0
+uci commit network
+
+# Mulai koneksi internet
+/etc/init.d/network start
+
+Anda dapat menyimpan script di atas dengan nama file, misalnya "ganti_mode_ncm.sh". Setelah itu, 
+jalankan script tersebut pada terminal router OpenWrt dengan perintah:
+
+sh ganti_mode_ncm.sh
+
+Pastikan Anda sudah menyesuaikan nilai "nama_apn" dan "kode_pin" pada script di atas dengan nilai yang sesuai pada provider internet Anda. 
+Setelah script di atas dijalankan, modem Fibocom L860 akan berubah menjadi mode NCM pada router OpenWrt.
+
 Untuk mengetahui apakah modem Fibocom L860 sudah menjadi mode NCM pada router OpenWrt, Anda dapat menggunakan perintah dmesg pada terminal router OpenWrt.
 Berikut adalah langkah-langkah untuk mengecek apakah modem Fibocom L860 sudah menjadi mode NCM:
 
