@@ -1,0 +1,72 @@
+Untuk mengaktifkan fitur MIMO pada modem Fibocom L860 di router OpenWrt, Anda perlu memastikan bahwa modem Fibocom L860 tersebut terhubung ke antena MIMO yang sesuai dan bahwa antena tersebut mendukung teknologi MIMO.
+
+Setelah itu, Anda dapat mengaktifkan fitur MIMO pada modem Fibocom L860 di router OpenWrt dengan mengubah pengaturan pada file /etc/config/network. Berikut adalah langkah-langkahnya:
+
+    Masuk ke terminal router OpenWrt.
+
+    Buka file /etc/config/network dengan menggunakan teks editor, seperti nano atau vi. Contoh perintah untuk membuka file tersebut dengan menggunakan nano adalah sebagai berikut:
+
+arduino
+
+nano /etc/config/network
+
+    Cari bagian yang terkait dengan modem Fibocom L860. Biasanya, bagian ini terletak pada bagian "config interface 'wan'". 
+    Pastikan bahwa pengaturan mode pada modem Fibocom L860 sudah disetel sebagai mode NCM.
+
+    Tambahkan opsi "option proto 'ncm'" pada bagian modem Fibocom L860 seperti di bawah ini:
+
+vbnet
+
+config interface 'wan'
+	option proto 'ncm'
+	option device '/dev/cdc-wdm0'
+	option apn 'nama_apn'
+	option pincode 'kode_pin'
+	option auth 'none'
+	option ipv6 'auto'
+	option auto '0'
+
+    Tambahkan opsi "option mimo '1'" pada bagian modem Fibocom L860, sehingga bagian modem tersebut menjadi seperti di bawah ini:
+
+vbnet
+
+config interface 'wan'
+	option proto 'ncm'
+	option device '/dev/cdc-wdm0'
+	option apn 'nama_apn'
+	option pincode 'kode_pin'
+	option auth 'none'
+	option ipv6 'auto'
+	option mimo '1'
+	option auto '0'
+
+    Simpan perubahan dengan menekan tombol Ctrl + X, kemudian tekan Y untuk menyimpan dan tekan Enter untuk mengkonfirmasi.
+
+    Restart router OpenWrt untuk menerapkan perubahan.
+
+Setelah itu, fitur MIMO pada modem Fibocom L860 sudah aktif pada router OpenWrt. Anda dapat mengecek kembali koneksi dan sinyal modem Fibocom L860
+pada router OpenWrt untuk memastikan bahwa fitur MIMO sudah berfungsi dengan baik.
+
+Untuk mengecek apakah fitur MIMO pada modem Fibocom L860 sudah berfungsi atau tidak, Anda dapat menggunakan perintah iw pada terminal router OpenWrt
+dengan mengikuti langkah-langkah berikut:
+
+    Pastikan modem Fibocom L860 sudah terhubung ke router OpenWrt dan menjadi mode NCM.
+
+    Buka terminal pada router OpenWrt atau login ke router melalui SSH.
+
+    Jalankan perintah berikut untuk menampilkan informasi tentang antarmuka WLAN:
+
+iw dev
+
+    Cari nama interface WLAN yang ingin Anda cek (misalnya "wlan0").
+
+    Jalankan perintah berikut untuk menampilkan informasi tentang dukungan MIMO pada antarmuka WLAN tersebut:
+
+iw dev wlan0 info
+
+    Pada output perintah di atas, perhatikan bagian "Capabilities" dan cari informasi tentang "MIMO". 
+    Jika terdapat informasi "MIMO-rx" dan "MIMO-tx" dengan nilai yang lebih besar dari 1, itu menandakan bahwa fitur MIMO sudah berfungsi 
+    pada antarmuka WLAN tersebut.
+
+Jika fitur MIMO tidak berfungsi pada modem Fibocom L860, Anda dapat mencoba memperbarui firmware atau driver untuk modem tersebut. 
+Anda juga dapat mencoba menyesuaikan konfigurasi router OpenWrt untuk mendukung MIMO dengan mengikuti panduan dan sumber daya yang tersedia di komunitas OpenWrt.
