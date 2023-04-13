@@ -1,0 +1,41 @@
+Berikut adalah contoh script untuk menambahkan interface modem Fibocom L860 dengan protocol NCM secara otomatis di OpenWrt:
+
+    Buat file baru dengan nama "add_modem_interface_ncm.sh" di direktori /etc/hotplug.d/usb/ menggunakan perintah:
+
+bash
+
+vi /etc/hotplug.d/usb/add_modem_interface_ncm.sh
+
+    Masukkan kode script berikut ke dalam file "add_modem_interface_ncm.sh":
+
+bash
+
+#!/bin/sh
+
+if [ "${ACTION}" = "add" ] && [ -f "/sys$DEVPATH/manufacturer" ] && [ "$(cat /sys$DEVPATH/manufacturer)" = "FIBOCOM" ] ; then
+        if [ -f "/sys$DEVPATH/product" ] && [ "$(cat /sys$DEVPATH/product)" = "L860" ]; then
+                if [ ! -f "/etc/config/network.bak" ]; then
+                        cp /etc/config/network /etc/config/network.bak
+                fi
+                if ! grep -q "config interface 'wan_modem'" "/etc/config/network"; then
+                        echo "config interface 'wan_modem'" >> /etc/config/network
+                        echo "        option ifname 'wwan0'" >> /etc/config/network
+                        echo "        option proto 'ncm'" >> /etc/config/network
+                        echo "        option device '/dev/cdc-wdm0'" >> /etc/config/network
+                        echo "        option apn 'internet'" >> /etc/config/network
+                fi
+                /etc/init.d/network restart
+        fi
+fi
+
+    Simpan dan keluar dari file editor.
+
+    Berikan hak akses eksekusi ke file "add_modem_interface_ncm.sh" menggunakan perintah:
+
+bash
+
+chmod +x /etc/hotplug.d/usb/add_modem_interface_ncm.sh
+
+    Restart router OpenWrt Anda untuk memulai penggunaan script.
+
+Dengan script di atas, ketika modem Fibocom L860 dihubungkan ke port USB di router OpenWrt, maka interface "wan_modem" akan otomatis ditambahkan ke konfigurasi jaringan dengan device "/dev/cdc-wdm0", proto "ncm", dan apn "internet". Anda bisa menyesuaikan pengaturan ini sesuai dengan kebutuhan Anda.
