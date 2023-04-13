@@ -1,0 +1,101 @@
+Untuk menggunakan wifi RTL8821CU pada OpenWrt 22.03.3, Anda dapat mengikuti beberapa langkah berikut:
+
+    Pastikan bahwa router OpenWrt Anda sudah terpasang dan terhubung dengan internet.
+
+    Pasang paket "kmod-usb-dongle" dan "kmod-rtl8821cu" dengan menggunakan opkg:
+
+    sql
+
+opkg update
+opkg install kmod-usb-dongle kmod-rtl8821cu
+
+Setelah pemasangan selesai, pasang wifi dongle RTL8821CU ke router OpenWrt.
+
+Aktifkan wifi dongle dengan perintah:
+
+wifi detect
+
+Konfigurasi wifi dengan menambahkan sebuah file baru dalam direktori /etc/config/wireless, misalnya dengan menggunakan perintah:
+
+arduino
+
+vi /etc/config/wireless
+
+Lalu, tambahkan konfigurasi berikut:
+
+vbnet
+
+config wifi-device 'radio1'
+        option type 'mac80211'
+        option channel 'auto'
+        option hwmode '11ac'
+        option path 'pci0000:00/0000:00:1d.7/usb1/1-3/1-3:1.0'
+        option htmode 'VHT80'
+        option disabled '0'
+
+config wifi-iface 'default_radio1'
+        option device 'radio1'
+        option network 'lan'
+        option mode 'ap'
+        option ssid 'MyNetwork'
+        option encryption 'none'
+
+Pastikan Anda mengganti opsi "path" sesuai dengan path perangkat wifi dongle RTL8821CU di router OpenWrt Anda.
+
+Restart wifi dengan perintah:
+
+wifi
+
+Wifi dongle RTL8821CU sekarang sudah aktif dan siap digunakan. Anda dapat melakukan pengujian dengan menghubungkan perangkat lain 
+ke jaringan wifi yang dibuat menggunakan konfigurasi di atas.
+
+Untuk mengecek path yang sesuai untuk wifi RTL8821CU di OpenWrt 22.03.3, Anda dapat melakukan langkah-langkah berikut:
+
+    Pastikan bahwa perangkat USB wifi RTL8821CU sudah terpasang pada router OpenWrt.
+
+    Buka terminal pada router OpenWrt dan ketikkan perintah dmesg untuk menampilkan log kernel.
+
+    Cari bagian log yang menunjukkan perangkat USB wifi yang terpasang. Biasanya akan terlihat seperti ini:
+
+    less
+
+[ 7.968380] usb 1-1.2: new high-speed USB device number 4 using ehci-platform
+[ 8.087022] usb 1-1.2: New USB device found, idVendor=0bda, idProduct=c820, bcdDevice= 0.00
+[ 8.094536] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 8.102418] usb 1-1.2: Product: 802.11ac NIC
+[ 8.106976] usb 1-1.2: Manufacturer: Realtek
+[ 8.111324] usb 1-1.2: SerialNumber: 123456
+[ 8.231989] usb 1-1.2: reset high-speed USB device number 4 using ehci-platform
+[ 8.486707] usbcore: registered new interface driver rtl8812au
+[ 8.492516] kmodloader: done loading kernel modules from /etc/modules.d/*
+
+Pada contoh di atas, terlihat bahwa perangkat USB wifi Realtek dengan idVendor=0bda dan idProduct=c820 terdeteksi dengan driver rtl8812au.
+
+Setelah mengetahui driver yang digunakan, Anda dapat mencari path yang sesuai dengan driver tersebut. Misalnya, untuk driver rtl8812au, 
+path yang sesuai biasanya adalah /sys/bus/usb/drivers/rtl8812au/. Anda dapat mencoba memeriksa path ini dengan menjalankan 
+perintah ls /sys/bus/usb/drivers/rtl8812au/. Jika path ini tidak ditemukan, 
+Anda dapat mencoba mencari path yang sesuai dengan driver lain yang digunakan untuk perangkat USB wifi RTL8821CU.
+
+jika Anda ingin mencari path yang sesuai untuk wifi rtl8821cu di OpenWrt 22.03.3, 
+Anda dapat menggunakan perintah lsusb untuk mengetahui ID vendor dan ID produk dari wifi tersebut, 
+kemudian mencari path yang sesuai dengan menggunakan perintah ls /sys/bus/usb/drivers/. 
+Misalnya:
+
+    Jalankan perintah lsusb untuk mengetahui ID vendor dan ID produk dari wifi rtl8821cu. Contohnya:
+
+
+root@OpenWrt:~# lsusb
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 0bda:1a2b Realtek Semiconductor Corp. RTL8821CU 802.11n WLAN Adapter
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+Dari hasil output di atas, ID vendor adalah 0bda dan ID produk adalah 1a2b.
+
+    Gunakan perintah ls /sys/bus/usb/drivers/ untuk mencari path yang sesuai. Contohnya:
+
+
+root@OpenWrt:~# ls /sys/bus/usb/drivers/
+ch341  hub     mcs7830  pl2303  qmi_wwan  rtl8812au  usbfs  usbhid  usbip-host  usbip-vudc   uvcvideo
+
+Dari hasil output di atas, terdapat driver rtl8812au yang sesuai dengan wifi rtl8821cu. 
+Anda dapat menggunakan path /sys/bus/usb/drivers/rtl8812au/ untuk melakukan konfigurasi pada wifi tersebut.
