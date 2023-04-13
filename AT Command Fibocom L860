@@ -1,0 +1,40 @@
+Berikut ini adalah beberapa AT command yang dapat digunakan untuk modem Fibocom L860:
+
+    AT: Perintah untuk menguji koneksi dan memastikan modem merespons.
+
+    AT+CFUN: Perintah untuk mengatur mode fungsional modem (normal, minimal, pesawat).
+
+    AT+CMEE: Perintah untuk mengaktifkan pesan kesalahan terperinci.
+
+    AT+COPS: Perintah untuk menampilkan dan memilih operator jaringan.
+
+    AT+CGDCONT: Perintah untuk mengatur profil APN.
+
+    AT+CGACT: Perintah untuk mengaktifkan atau menonaktifkan koneksi PDP.
+
+    AT+CGATT: Perintah untuk mengaktifkan atau menonaktifkan attach ke GPRS/UMTS.
+
+    AT+CREG: Perintah untuk menampilkan status registrasi jaringan.
+
+    AT+CEREG: Perintah untuk menampilkan status registrasi EPS.
+
+    AT+CIMI: Perintah untuk menampilkan IMSI SIM card.
+
+    AT+CCID: Perintah untuk menampilkan ICCID SIM card.
+
+    AT+CGSN: Perintah untuk menampilkan nomor seri IMEI modem.
+
+    AT+CSQ: Perintah untuk menampilkan kualitas sinyal.
+
+    AT+CGMR: Perintah untuk menampilkan nomor versi firmware modem.
+
+    AT+CGMI: Perintah untuk menampilkan nama produsen modem.
+
+    AT+CGMM: Perintah untuk menampilkan nama model modem.
+
+    AT+CGMR: Perintah untuk menampilkan nomor versi firmware modem.
+
+    AT+CGSN: Perintah untuk menampilkan nomor seri IMEI modem.
+
+Perhatikan bahwa tidak semua AT command di atas dapat didukung oleh semua modem Fibocom L860.
+Pastikan untuk memeriksa dokumentasi yang disediakan oleh produsen modem untuk informasi lebih lanjut tentang AT command yang didukung oleh modem Anda.
