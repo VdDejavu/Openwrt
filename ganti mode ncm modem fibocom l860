@@ -37,3 +37,24 @@ Penjelasan perintah di atas:
 
 Dengan menjalankan perintah di atas, perangkat USB pada modem Fibocom L860 akan beralih dari mode USB storage menjadi mode NCM, 
 sehingga dapat digunakan sebagai modem pada router OpenWrt.
+
+Untuk mengetahui apakah modem Fibocom L860 sudah menjadi mode NCM pada router OpenWrt, Anda dapat menggunakan perintah dmesg pada terminal router OpenWrt.
+Berikut adalah langkah-langkah untuk mengecek apakah modem Fibocom L860 sudah menjadi mode NCM:
+
+    Hubungkan modem Fibocom L860 ke port USB pada router OpenWrt.
+
+    Jalankan perintah dmesg pada terminal OpenWrt untuk melihat log sistem. Anda akan melihat beberapa informasi tentang perangkat USB yang terhubung, 
+    termasuk modem Fibocom L860.
+
+    Periksa apakah ada pesan yang menunjukkan bahwa modem Fibocom L860 sudah menjadi mode NCM. Pesan tersebut biasanya akan terlihat seperti ini:
+
+
+[  584.564197] cdc_ncm 1-1.2:1.2: MAC-Address: xx:xx:xx:xx:xx:xx
+[  584.570168] cdc_ncm 1-1.2:1.2: setting rx_max = 16384
+[  584.575407] cdc_ncm 1-1.2:1.2: setting tx_max = 16384
+[  584.583231] cdc_ncm 1-1.2:1.2 usb0: register 'cdc_ncm' at usb-ehci-platform-1.2, CDC NCM, xx:xx:xx:xx:xx:xx
+
+Pesan di atas menunjukkan bahwa modem Fibocom L860 sudah dikenali sebagai perangkat USB modem dan telah terkoneksi ke jaringan sebagai cdc_ncm.
+
+Jika Anda tidak melihat pesan tersebut, maka modem Fibocom L860 belum terkoneksi ke jaringan sebagai perangkat modem NCM. Anda perlu mengecek kembali
+pengaturan dan konfigurasi modem Fibocom L860 pada router OpenWrt.
