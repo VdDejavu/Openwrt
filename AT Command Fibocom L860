@@ -38,3 +38,69 @@ Berikut ini adalah beberapa AT command yang dapat digunakan untuk modem Fibocom 
 
 Perhatikan bahwa tidak semua AT command di atas dapat didukung oleh semua modem Fibocom L860.
 Pastikan untuk memeriksa dokumentasi yang disediakan oleh produsen modem untuk informasi lebih lanjut tentang AT command yang didukung oleh modem Anda.
+
+Untuk mengunci atau memblokir band seluler pada modem Fibocom L860, Anda dapat menggunakan AT command AT+QBANDLOCK. Berikut adalah sintaks dan opsi yang tersedia untuk perintah ini:
+
+Sintaks: AT+QBANDLOCK=<lock_mode>[,<band_list>]
+
+Opsi:
+
+    <lock_mode>: Mode kunci band. Nilai yang dapat digunakan adalah:
+        0: Lepaskan kunci band.
+        1: Kunci band dengan daftar band tertentu yang ditentukan oleh <band_list>.
+
+    <band_list>: Daftar band yang ingin dikunci, dipisahkan dengan koma. Nilai yang dapat digunakan adalah:
+        0: Automatic (pilih band secara otomatis).
+        1: Band GSM 850.
+        2: Band GSM 900.
+        3: Band GSM 1800.
+        4: Band GSM 1900.
+        5: Band WCDMA Band I.
+        6: Band WCDMA Band II.
+        7: Band WCDMA Band III.
+        8: Band WCDMA Band IV.
+        9: Band WCDMA Band V.
+        10: Band WCDMA Band VI.
+        11: Band WCDMA Band VII.
+        12: Band WCDMA Band VIII.
+        13: Band WCDMA Band IX.
+        14: Band WCDMA Band X.
+        15: Band WCDMA Band XI.
+        16: Band WCDMA Band XII.
+        17: Band WCDMA Band XIII.
+        18: Band WCDMA Band XIV.
+        19: Band WCDMA Band XV.
+        20: Band LTE Band 1.
+        21: Band LTE Band 2.
+        22: Band LTE Band 3.
+        23: Band LTE Band 4.
+        24: Band LTE Band 5.
+        25: Band LTE Band 6.
+        26: Band LTE Band 7.
+        27: Band LTE Band 8.
+        28: Band LTE Band 9.
+        29: Band LTE Band 10.
+        30: Band LTE Band 11.
+        31: Band LTE Band 12.
+        32: Band LTE Band 13.
+        33: Band LTE Band 14.
+        34: Band LTE Band 15.
+        35: Band LTE Band 16.
+        36: Band LTE Band 17.
+        37: Band LTE Band 18.
+        38: Band LTE Band 19.
+        39: Band LTE Band 20.
+        40: Band LTE Band 21.
+        41: Band LTE Band 22.
+        42: Band LTE Band 23.
+        43: Band LTE Band 24.
+        44: Band LTE Band 25.
+        45: Band LTE Band 26.
+        46: Band LTE Band 27.
+        47: Band LTE Band 28.
+        48: Band LTE Band 29.
+        49: Band LTE Band 30.
+        50: Band LTE Band 31.
+        51: Band LTE Band 32.
+
+Contoh penggunaan: Untuk mengunci band WCDMA Band I, Band II, dan Band III
