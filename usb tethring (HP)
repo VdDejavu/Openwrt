@@ -1,0 +1,23 @@
+Berikut ini contoh script untuk mengaktifkan USB Tethering di OpenWrt:
+
+bash
+
+#!/bin/sh
+
+# Check if the USB device is available
+if [ ! -e /sys/class/net/usb0 ]; then
+    echo "USB device not found"
+    exit 1
+fi
+
+# Bring up the USB interface
+ip link set usb0 up
+
+# Set the IP address and route for USB tethering
+udhcpc -i usb0
+
+Script di atas akan melakukan pengecekan terlebih dahulu apakah perangkat USB tersedia atau tidak. Jika perangkat tidak ditemukan,
+maka script akan keluar dengan status 1. Jika perangkat ditemukan, script akan mengaktifkan interface USB, kemudian menjalankan udhcpc untuk mengambil alamat IP dan rute melalui DHCP.
+
+Anda dapat menambahkan script ini ke sistem Anda dengan membuat file baru di direktori /etc/hotplug.d/usb/, misalnya /etc/hotplug.d/usb/50-usb-tethering. Setelah membuat file tersebut, berikan hak akses eksekusi dengan perintah chmod +x /etc/hotplug.d/usb/50-usb-tethering. 
+Dengan begitu, setiap kali perangkat USB terhubung ke router OpenWrt, script ini akan dijalankan secara otomatis.
